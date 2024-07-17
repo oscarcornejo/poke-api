@@ -1,4 +1,4 @@
-import { GetPokemonResponse } from "../../utils";
+import { GetPokemonResponse } from "../../models";
 
 export type PokemonProps = {
   pokemon: GetPokemonResponse;

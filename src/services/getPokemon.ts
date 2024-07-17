@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { GetPokemonResponse } from "../utils";
+import { GetPokemonResponse } from "../models";
 
 export const pokemonApi = createApi({
   reducerPath: "pokemonApi",
