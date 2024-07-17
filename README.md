@@ -1,30 +1,52 @@
-# React + TypeScript + Vite
+# PokeApi + React + TypeScript + Redux Toolkit
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción
 
-Currently, two official plugins are available:
+Este proyecto es una aplicación web que consume la PokeApi para mostrar la información de 151 diferentes Pokémon.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Características
 
-## Expanding the ESLint configuration
+- **Consumo de API**: Obtención de datos de la PokeApi.
+- **React**: Desarrollo de componentes reutilizables.
+- **TypeScript**: Tipado estático para mayor robustez y mantenimiento del código.
+- **Redux Toolkit**: Manejo eficiente del estado global de la aplicación.
+- **redux-persist**: Persistencia del estado en el almacenamiento local.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Instalación
 
-- Configure the top-level `parserOptions` property like this:
+Para clonar y ejecutar esta aplicación, necesitas [Git](https://git-scm.com) y [Node.js](https://nodejs.org/en/download/):
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+# Clona este repositorio
+git clone https://github.com/oscarcornejo/poke-api.git
+
+# Ve al repositorio clonado
+cd poke-api
+
+# Instala las dependencias
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Enviroment
+
+Para que la aplicación funcione correctamente, es necesario crear un archivo `.env` en la raíz del proyecto con la siguiente variable de entorno (Actualmente ya se proporciona este archivo en el repositorio):
+
+```env
+VITE_POKE_API_URL="https://pokeapi.co/api/v2"
+VITE_POKE_API_GET_POKEMON="https://pokeapi.co/api/v2/pokemon"
+VITE_POKE_API_LIMIT="?limit=151"
+```
+
+## Uso
+
+Para iniciar la aplicación en modo desarrollo:
+
+```bash
+npm run dev
+```
+
+Luego, abre http://localhost:5173 para ver la aplicación en tu navegador.
+
+## Contribuir
+
+Las contribuciones son bienvenidas. Si tienes alguna idea o mejora, no dudes en abrir un issue o enviar un pull request.
