@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useGetPokemonByIdQuery } from "../services/getPokemon";
+import { useGetPokemonByIdQuery } from "../services";
 import { Loader, Pokemon, WrapperDivide } from "../components";
 import { ActionBar } from "../components/action-bar";
 

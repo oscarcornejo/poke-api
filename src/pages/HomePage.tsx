@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { PokemonCardList, SearchBar, WrapperDivide } from "../components";
 import { useAppDispatch, useAppSelector } from "../hooks";
-import { getInitialPokemonData } from "../services/getInitialPokemonData";
+import { getInitialPokemonData } from "../services";
 
 export const HomePage = () => {
   const dispatch = useAppDispatch();

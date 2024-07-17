@@ -6,6 +6,7 @@ import { setFilteredPokemon } from "../../store/slices";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 
 import classes from "./SearchBar.module.scss";
+import { sanitizeInput } from "../../utils";
 
 export const SearchBar = () => {
   const dispatch = useAppDispatch();
@@ -34,7 +35,7 @@ export const SearchBar = () => {
 
   useEffect(() => {
     handlerSearch();
-  }, [allPokemon, dispatch, handlerSearch, searchTerm]);
+  }, [handlerSearch]);
 
   return (
     <header className={classes["search-bar"]}>
@@ -53,8 +54,13 @@ export const SearchBar = () => {
           className={classes["search-bar__input"]}
           value={searchTerm}
           onChange={(e) => {
-            setSearchTerm(e.target.value);
-            setInputDirty(true);
+            const sanitizedTerm = sanitizeInput(e.target.value);
+            if (sanitizedTerm === "") {
+              setSearchTerm("");
+            } else {
+              setSearchTerm(sanitizedTerm);
+              setInputDirty(true);
+            }
           }}
           placeholder="Que pokemon buscas..."
         />
